@@ -17,12 +17,15 @@ const app = express();
 app.use(express.json());              //middleware
 app.use(express.urlencoded({ extended: true }))
 
+app.set('trust proxy', 1);
 
 app.use(
 	cookieSession({
 		name: "session",
 		keys: ["cyberwolve"],
 		maxAge: 24 * 60 * 60 * 100,
+        sameSite: "none",
+        secure: true
 	})
 );
 
