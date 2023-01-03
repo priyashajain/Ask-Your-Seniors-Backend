@@ -42,16 +42,16 @@ router.get("/google/callback",
 		// Successful authentication, redirect home.
 		if(req.user.isAdmin){
 			// localStorage.setItem("user",JSON.stringify({isAdmin: true}));
-			res.redirect("http://localhost:3000/admin");
+			res.redirect("https://ask-your-seniors.vercel.app/admin");
 		}
 		else{
 			// localStorage.setItem("user",JSON.stringify({isAdmin: false}));
 			if(req.user.branch){
-				res.redirect("http://localhost:3000/ask-your-doubts");
+				res.redirect("https://ask-your-seniors.vercel.app/ask-your-doubts");
 				// res.redirect("http://localhost:3000/home");
 			}
 			else{
-				res.redirect(`http://localhost:3000/details/${req.user._id}`);
+				res.redirect(`https://ask-your-seniors.vercel.app/details/${req.user._id}`);
 				// res.redirect(`http://localhost:3000/details`);
 			}
 		}
@@ -65,7 +65,7 @@ router.get("/google/callback",
 router.get("/logout", (req, res) => {
 	// localStorage.clear();
 	req.logout();
-	res.redirect(process.env.CLIENT_URL);
+	res.redirect("https://ask-your-seniors.vercel.app/");
 });
 
 router.get("/helloworld", (req, res) => {
