@@ -5,6 +5,7 @@ const answerSchema = new mongoose.Schema({
     content: String,
     approved: Boolean,
     notified: Boolean,
+    edited: String,
     // userId: String,
     user: {
         _id: String,
