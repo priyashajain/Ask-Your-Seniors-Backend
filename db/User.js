@@ -12,7 +12,8 @@ const userSchema = new mongoose.Schema({
     year: String,
     noOfDoubtsAsked: Number,
     noOfDoubtsAnswered: Number,
-    isAdmin: Boolean
+    isAdmin: Boolean,
+    avatar: String
 });
 
 userSchema.plugin(findOrCreate);

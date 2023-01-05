@@ -14,7 +14,8 @@ const answerSchema = new mongoose.Schema({
         fName: String,
         lName: String,
         branch: String,
-        year: String
+        year: String,
+        avatar: String
     },
     // questionId: String
     question: {
@@ -28,7 +29,8 @@ const answerSchema = new mongoose.Schema({
             fName: String,
             lName: String,
             branch: String,
-            year: String
+            year: String,
+            avatar: String
         }
     }
 });

@@ -15,7 +15,7 @@ passport.use(
         function (accessToken, refreshToken, profile, cb) {
             // callback(null, profile);
             console.log(profile);
-            User.findOrCreate({ googleId: profile.id },{ email: profile.emails[0].value }, function (err, user) {
+            User.findOrCreate({ googleId: profile.id },{ email: profile.emails[0].value, avatar: profile.photos[0].value }, function (err, user) {
                 return cb(err, user);
             });
         }
